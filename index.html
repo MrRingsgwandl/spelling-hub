@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Year 6 Spelling Hub</title>
+    <title>Spelling Learning Hub</title>
     <style>
         :root {
             --bg-color: #0f172a;
@@ -270,7 +270,7 @@
             <option value="Week 7">Week 7</option>
             <option value="Week 8">Week 8</option>
             <option value="Week 9">Week 9</option>
-            <option value="Week 10">Week 10</option>
+            <option value="Week 10">Week 10 (Revision)</option>
         </select>
 
         <button onclick="startGame()">Launch Activity</button>
@@ -315,82 +315,82 @@
 </div>
 
 <script>
-    // COMPLETE TERM 3 DATA BANK
+    // COMPLETE TERM 4 DATA BANK
     const spellingDatabase = {
         "Orange": {
-            "Week 1": ["special", "artificial", "beneficial", "social", "facial", "official", "specialist", "crucial", "commercial", "especially", "officially", "antisocial", "financial", "superficial"],
-            "Week 2": ["reaction", "celebration", "examination", "initial", "potential", "confidential", "martial", "essential", "nuptial", "residential", "credential", "partial", "celestial", "influential"],
-            "Week 3": ["demeanour", "splendour", "endeavour", "clamour", "humour", "candour", "centre", "massacre", "litre", "lyre", "calibre", "fibre", "millimetre", "meagre"],
-            "Week 4": ["anguish", "sanguine", "bilingual", "iguana", "penguin", "distinguish", "language", "ensuite", "extinguish", "languish", "suave", "guacamole", "linguistics", "suite"],
-            "Week 5": ["infatuation", "punctuate", "sumptuous", "capitulate", "saturate", "perpetuate", "situate", "unfortunate", "postulate", "punctual", "estuary", "bitumen", "statute", "tarantula"],
-            "Week 6": ["intelligent", "gentleman", "generation", "exaggerate", "tragically", "vigilant", "dangerous", "urgently", "legion", "religion", "region", "hygiene", "nostalgia", "contagious"],
-            "Week 7": ["allegiance", "prestigious", "sacrilegious", "plagiarise", "paraplegia", "hemiplegia", "neuralgia", "quadriplegia", "contagious", "educate", "graduate", "grandeur", "residual", "residue"],
-            "Week 8": ["euphoria", "neutral", "feuding", "therapeutic", "eulogy", "neurotic", "eucalypt", "feudal", "neutron", "neural", "Europe", "eureka", "deuce", "euphemism"],
-            "Week 9": ["calculate", "evaluate", "peculiar", "fabulous", "popular", "virtuous", "simulate", "argument", "curate", "university", "union", "studio", "educate", "nuclear"],
-            "Week 10": ["artificial", "confidential", "influential", "endeavour", "distinguish", "perpetuate", "exaggerate", "prestigious", "euphemism", "university"]
+            "Week 1": ["barbecue", "dandelion", "diabetes", "premium", "menial", "museum", "apostrophe", "catastrophe", "epitome", "finale", "recipe", "simile", "sesame", "kamikaze"],
+            "Week 2": ["fiesta", "albino", "sepia", "cordial", "hernia", "alien", "previous", "audio", "fiasco", "valiant", "radio", "timpani", "Banksia", "raffia"],
+            "Week 3": ["encyclopaedia", "palaeontology", "toxaemia", "anaemic", "orthopaedic", "paediatric", "haemophilia", "Caesar", "algae", "aetiology", "amoeba", "phoenix", "coeliac", "foetus"],
+            "Week 4": ["severe", "interfere", "sincere", "adhere", "persevere", "revere", "merely", "coherent", "superior", "experience", "ulterior", "hysteria", "inferior", "serious"],
+            "Week 5": ["aroma", "desperado", "dislocate", "program", "disposal", "noble", "quotable", "noticeable", "bonus", "bistro", "avocado", "gecko", "stereo", "bogus"],
+            "Week 6": ["temporarily", "aquarium", "literary", "transparent", "arbitrary", "precarious", "hilarious", "nefarious", "vicarious", "barbarian", "voluntarily", "vegetarian", "scarcely", "nightmarish"],
+            "Week 7": ["aerodynamic", "aeronautical", "aerobics", "aeroplane", "aerodrome", "aerospace", "aeration", "aerial", "aerobatics", "aerosol", "librarian", "planetarium", "malaria", "rosemary"],
+            "Week 8": ["midmorning", "midsection", "midstream", "midwinter", "foreboding", "foreknowledge", "foresightedness", "foreclosure", "forethought", "forecasting", "forewarning", "foreground", "foreshadowed", "forequarters"],
+            "Week 9": ["accelerate", "accordingly", "acceptance", "accidentally", "accompanied", "accomplice", "accusation", "acceptable", "accurate", "accomplish", "accede", "accompany", "accessed", "accounted"],
+            "Week 10": ["barbecue", "alien", "amoeba", "severe", "noticeable", "aquarium", "aeroplane", "midwinter", "accurate", "accomplice"]
         },
         "Pink": {
-            "Week 1": ["tolerant", "fragrant", "unobservant", "insignificant", "elegant", "compliant", "defiant", "reliant", "incessant", "triumphant", "ignorant", "vigilant", "brilliant", "reluctant"],
-            "Week 2": ["affluent", "acquiescent", "adjacent", "persistent", "delinquent", "luminescent", "eloquent", "indulgent", "translucent", "turbulent", "diligent", "insurgent", "permanent", "magnificent"],
-            "Week 3": ["disenchantment", "reimbursement", "disappointment", "commencement", "embarrassment", "amazement", "experiment", "establishment", "refinement", "improvement", "fulfilment", "allotment", "development", "enrichment"],
-            "Week 4": ["sportsmanship", "hardship", "penmanship", "dealership", "friendship", "relationship", "championship", "fellowship", "partnership", "scholarship", "guardianship", "apprenticeship", "dictatorship", "companion"],
-            "Week 5": ["physician", "musician", "comedian", "librarian", "vegetarian", "pedestrian", "guardian", "technician", "dietician", "civilian", "beautician", "parliamentarian", "clinician", "magician"],
-            "Week 6": ["precautionary", "beneficiary", "ordinary", "unnecessary", "supplementary", "revolutionary", "contemporary", "sanctuary", "preliminary", "complimentary", "glossary", "literary", "temporary", "secondary"],
-            "Week 7": ["compensatory", "perfunctory", "contradictory", "inflammatory", "discriminatory", "unsatisfactory", "migratory", "accessory", "trajectory", "compulsory", "inventory", "exploratory", "introductory", "conservatory"],
-            "Week 8": ["stellar", "unfamiliar", "dissimilar", "linear", "irregular", "granular", "modular", "particular", "spectacular", "perpendicular", "circular", "guitar", "muscular", "peninsular"],
-            "Week 9": ["nanotechnology", "biotechnology", "mythology", "meteorology", "terminology", "kinesiology", "morphology", "immunology", "geology", "psychology", "vulcanology", "audiology", "pharmacology", "sociology"],
-            "Week 10": ["insignificant", "magnificent", "embarrassment", "relationship", "parliamentarian", "unnecessary", "unsatisfactory", "perpendicular", "nanotechnology", "psychology"]
+            "Week 1": ["sumptuous", "capitulate", "perpetuate", "unfortunately", "postulate", "virtually", "saturate", "charade", "cliché", "chivalry", "niche", "chute", "brochure", "machine"],
+            "Week 2": ["beneficial", "superficial", "artificial", "antisocial", "crucial", "especially", "commercial", "anxious", "obnoxious", "complexion", "transfixion", "anxiousness", "flexion", "noxious"],
+            "Week 3": ["therapeutic", "euphemism", "neurotic", "feuding", "euphoria", "eulogy", "eucalypt", "sleuth", "leukaemia", "rheumatism", "Melaleuca", "fluoride", "hydrofluoric", "fluoroscope"],
+            "Week 4": ["disproportional", "multifunctional", "controversial", "occasional", "rehearsal", "exceptional", "accidental", "impractical", "mystical", "nautical", "typical", "radical", "hysterical", "uncritical"],
+            "Week 5": ["parachute", "chivalrous", "ricochet", "pistachio", "charlatan", "chauvinist", "chauffeur", "chagrin", "nonchalant", "avalanche", "appreciate", "excruciating", "associate", "dissociate"],
+            "Week 6": ["gourmet", "sachet", "chalet", "crochet", "tourniquet", "bouquet", "croquet", "conquer", "masquerade", "etiquette", "quiche", "mosquito", "mannequin", "quoits"],
+            "Week 7": ["foreign", "consignment", "campaign", "design", "sovereign", "gnarled", "assigned", "alignment", "reigned", "champagne", "feign", "diaphragm", "paradigm", "phlegm"],
+            "Week 8": ["rhythmical", "rhapsody", "rhetorical", "rhinoceros", "ghostly", "ghastliness", "dinghy", "honour", "exhausted", "annihilate", "exhilarate", "silhouette", "exhibition", "honestly"],
+            "Week 9": ["pseudonym", "psychedelic", "psychology", "receipt", "pterodactyl", "raspberry", "cupboard", "pneumonia", "pneumatic", "rapport", "debut", "mortgage", "condemn", "solemn"],
+            "Week 10": ["unfortunately", "crucial", "euphoria", "exceptional", "appreciate", "etiquette", "campaign", "rhinoceros", "psychology", "mortgage"]
         },
         "Blue": {
-            "Week 1": ["hemisphere", "hemiplegic", "semitransparent", "semi-formal", "semiconscious", "semipermanent", "hyperextend", "hyperactive", "hypersensitive", "hypercritical", "hypochondriac", "hypothetical", "hypocrite", "hypothermia"],
-            "Week 2": ["emancipated", "embark", "embodiment", "embezzle", "embellish", "entice", "enhance", "enrichment", "encouragement", "enclosure", "encompass", "entangle", "envision", "encapsulate"],
-            "Week 3": ["follicle", "vehicle", "article", "icicle", "chronicle", "particle", "cubicle", "miracle", "receptacle", "oracle", "debacle", "spectacle", "pinnacle", "obstacle"],
-            "Week 4": ["ideological", "methodical", "sceptical", "nonsensical", "ethical", "comical", "reciprocal", "chronological", "tactical", "satirical", "logical", "asymmetrical", "technical", "mechanical"],
-            "Week 5": ["collaborative", "instinctive", "inclusive", "manipulative", "destructive", "innovative", "lucrative", "impulsive", "excessive", "elusive", "persuasive", "compulsive", "perceptive", "disruptive"],
-            "Week 6": ["exuberance", "brilliance", "extravagance", "vigilance", "reconnaissance", "endurance", "nonchalance", "nuisance", "vengeance", "misguidance", "alliance", "dominance", "reluctance", "tolerance"],
-            "Week 7": ["indulgence", "effervescence", "impudence", "correspondence", "independence", "condolence", "convalescence", "imminence", "dependence", "convergence", "pretence", "reference", "excellence", "imprudence"],
-            "Week 8": ["dynamic", "sarcastic", "lethargic", "claustrophobic", "opportunistic", "catastrophic", "idealistic", "apologetic", "dramatic", "enthusiastic", "eccentric", "fantastic", "unrealistic", "symbolic"],
-            "Week 9": ["emphasise", "apologise", "scrutinise", "revitalise", "jeopardise", "memorise", "recognise", "penalise", "criticise", "capitalise", "surmise", "maximise", "comprise", "enterprise"],
-            "Week 10": ["semitransparent", "hypochondriac", "encapsulate", "receptacle", "asymmetrical", "reconnaissance", "effervescence", "claustrophobic", "scrutinise", "jeopardise"]
+            "Week 1": ["aqueous", "aquarium", "subaquatic", "aquaculture", "aqueduct", "reduction", "conduct", "productivity", "deductive", "induction", "expedition", "impediment", "pedestrian", "expedite"],
+            "Week 2": ["audience", "auditorium", "audible", "audiovisual", "visualise", "invisible", "improvise", "visionary", "evidence", "advocate", "irrevocable", "provocation", "revoke", "vocalisation"],
+            "Week 3": ["centenary", "percent", "centipede", "bicentenary", "decimal", "decimate", "decibel", "unique", "reunion", "university", "unison", "octopus", "octave", "octagonal"],
+            "Week 4": ["circumvent", "circumstantial", "circumstance", "circumspect", "primitive", "primordial", "primacy", "nominate", "pseudonym", "nominal", "correctable", "rectify", "redirection", "indirectly"],
+            "Week 5": ["manually", "manipulate", "manufacture", "manuscript", "corporation", "corpulence", "reincorporated", "entanglement", "contagious", "tangible", "reconstruction", "obstruction", "deconstructed", "instructive"],
+            "Week 6": ["contemporary", "extemporaneous", "attempting", "temporary", "contemplation", "magnificently", "magnanimous", "magnitude", "magnanimity", "magnification", "distractible", "attraction", "extracting", "retracted"],
+            "Week 7": ["reoccurring", "incursion", "precursor", "cursory", "concurrent", "benefactor", "dignify", "amplify", "diversify", "satisfaction", "interdependent", "appendage", "suspension", "dependability"],
+            "Week 8": ["inscription", "conscription", "indescribable", "transcription", "prescriptive", "vindictive", "contradict", "unpredictable", "edict", "verdict", "legitimate", "legacy", "legalistic", "legislative"],
+            "Week 9": ["gregarious", "segregation", "congregate", "egregious", "ambiguously", "ambitious", "ambience", "ambidextrous", "disillusionment", "collude", "ludicrous", "elusive", "delusion", "allusive"],
+            "Week 10": ["aquaculture", "visionary", "university", "circumvent", "manipulate", "magnanimous", "benefactor", "legitimate", "ambidextrous", "delusion"]
         }
     };
 
     const detectiveRules = {
         "Orange": {
-            "Week 1": { prompt: "Type the exact graph or digraph making the /sh/ sound:", answers: ["ci", "cial"] },
-            "Week 2": { prompt: "Type the suffix or rule part making the /sh/ or /shul/ sound:", answers: ["tion", "tial"] },
-            "Week 3": { prompt: "Type the ending graph/trigraph spelling the schwa sound:", answers: ["our", "re"] },
-            "Week 4": { prompt: "Type the vowel character tracking the /w/ phoneme:", answers: ["u"] },
-            "Week 5": { prompt: "Type the dynamic letter character generating the /ch/ sound:", answers: ["t"] },
-            "Week 6": { prompt: "Type the target letters mapping to the /j/ sound context:", answers: ["g", "gi"] },
-            "Week 7": { prompt: "Type the target graph elements driving the /j/ sound pattern:", answers: ["gi", "d"] },
-            "Week 8": { prompt: "Type the starting digraph element yielding the /y + oo/ sound:", answers: ["eu"] },
-            "Week 9": { prompt: "Type the specific vowel tracking the /y + oo/ sound engine:", answers: ["u"] },
-            "Week 10": { prompt: "Type ANY target digraph or phonic suffix rule found in this revision word:", answers: ["ci", "cial", "tion", "tial", "our", "re", "t", "g", "gi", "d", "eu", "u"] }
+            "Week 1": { prompt: "Type the target vowel mapping to the /ee/ sound in this open syllable:", answers: ["e"] },
+            "Week 2": { prompt: "Type the target vowel mapping to the /ee/ sound in this word:", answers: ["i"] },
+            "Week 3": { prompt: "Type the digraph mapping to the /ee/ sound (ae or oe):", answers: ["ae", "oe"] },
+            "Week 4": { prompt: "Type the target letters making the /ear/ sound:", answers: ["ere", "er"] },
+            "Week 5": { prompt: "Type the target vowel representing the /oa/ sound in an open syllable:", answers: ["o"] },
+            "Week 6": { prompt: "Type the r-controlled letters making the /air/ sound:", answers: ["ar"] },
+            "Week 7": { prompt: "Type the root letters meaning air or atmosphere:", answers: ["aer", "ar"] },
+            "Week 8": { prompt: "Type the prefix meaning middle, before, or front:", answers: ["mid", "fore"] },
+            "Week 9": { prompt: "Type the prefix meaning toward or near:", answers: ["ac"] },
+            "Week 10": { prompt: "Type ANY target rule part (e, i, ae, oe, ere, er, ar, aer, mid, fore, ac) found in this word:", answers: ["e", "i", "ae", "oe", "ere", "er", "o", "ar", "aer", "mid", "fore", "ac"] }
         },
         "Pink": {
-            "Week 1": { prompt: "Type the exact spelling suffix indicating 'having a quality of':", answers: ["ant", "ent"] },
-            "Week 2": { prompt: "Type the exact spelling suffix indicating 'a person who / quality of':", answers: ["ent", "ant"] },
-            "Week 3": { prompt: "Type the structural suffix indicating a 'state of, action or result':", answers: ["ment"] },
-            "Week 4": { prompt: "Type the common suffix tracking 'meaning state, condition of, or skill':", answers: ["ship"] },
-            "Week 5": { prompt: "Type the target noun suffix matching the descriptor 'meaning one who':", answers: ["ian"] },
-            "Week 6": { prompt: "Type the target suffix matching 'meaning relating to':", answers: ["ary", "ery", "ory"] },
-            "Week 7": { prompt: "Type the specific structural suffix 'meaning relating to':", answers: ["ory", "ary", "ery"] },
-            "Week 8": { prompt: "Type the specific suffix mapping to 'a person who, or relating to':", answers: ["ar"] },
-            "Week 9": { prompt: "Type the academic word suffix 'meaning study of':", answers: ["ology"] },
-            "Week 10": { prompt: "Type ANY suffix extension rule tracked throughout this term's study:", answers: ["ant", "ent", "ment", "ship", "ian", "ary", "ery", "ory", "ar", "ology"] }
+            "Week 1": { prompt: "Type the target graph making the /ch/ or /sh/ sound:", answers: ["t", "ch"] },
+            "Week 2": { prompt: "Type the target graph making the /sh/ or /ksh/ sound:", answers: ["ci", "xi"] },
+            "Week 3": { prompt: "Type the target vowel graph making the /y+oo/ or /oo/ sound:", answers: ["eu", "uo"] },
+            "Week 4": { prompt: "Type the target suffix meaning relating to or characterised by:", answers: ["al", "cal"] },
+            "Week 5": { prompt: "Type the target graph making the /sh/ sound:", answers: ["ch", "c"] },
+            "Week 6": { prompt: "Type the target graph making the /ai/ or /k/ sound:", answers: ["et", "qu"] },
+            "Week 7": { prompt: "Type the target graph with a silent g:", answers: ["gn", "gm"] },
+            "Week 8": { prompt: "Type the target graph with a silent h:", answers: ["rh", "gh", "h"] },
+            "Week 9": { prompt: "Type the target graph containing a silent letter at the start or end:", answers: ["ps", "pt", "pb", "pn", "mn"] },
+            "Week 10": { prompt: "Type ANY target digraph, silent graph, or suffix rule studied this term:", answers: ["t", "ch", "ci", "xi", "eu", "uo", "al", "cal", "c", "et", "qu", "gn", "gm", "rh", "gh", "h", "ps", "pt", "pb", "pn", "mn"] }
         },
         "Blue": {
-            "Week 1": { prompt: "Type the word-start prefix element meaning 'half', 'under' or 'above':", answers: ["semi", "hemi", "hyper", "hypo"] },
-            "Week 2": { prompt: "Type the core prefix element 'meaning cause to, put into or make':", answers: ["en", "em"] },
-            "Week 3": { prompt: "Type the ending word suffix 'indicating place or means by which action is formed':", answers: ["icle", "acle"] },
-            "Week 4": { prompt: "Type the target descriptor suffix 'meaning relating to, characterised by':", answers: ["cal"] },
-            "Week 5": { prompt: "Type the descriptive word suffix 'meaning having the nature of':", answers: ["ive"] },
-            "Week 6": { prompt: "Type the core spelling suffix 'meaning state or quality of':", answers: ["ance"] },
-            "Week 7": { prompt: "Type the spelling suffix 'meaning state, condition or action':", answers: ["ence", "ense"] },
-            "Week 8": { prompt: "Type the phonics suffix 'meaning relating to or characterised by':", answers: ["ic"] },
-            "Week 9": { prompt: "Type the suffix extension 'meaning cause, treat, or become':", answers: ["ise", "ize", "yse"] },
-            "Week 10": { prompt: "Type ANY prefix or suffix construction rule tested during this term:", answers: ["semi", "hemi", "hyper", "hypo", "en", "em", "icle", "acle", "cal", "ive", "ance", "ence", "ense", "ic", "ise", "ize", "yse"] }
+            "Week 1": { prompt: "Type the Latin root meaning water, draw, or foot:", answers: ["aqua", "duc", "ped"] },
+            "Week 2": { prompt: "Type the Latin root meaning to hear, to see, or to call:", answers: ["aud", "vis", "voc"] },
+            "Week 3": { prompt: "Type the Latin root meaning 100, 10, 1, or 8:", answers: ["cent", "dec", "un", "oct"] },
+            "Week 4": { prompt: "Type the Latin root meaning around, first, name, or straight:", answers: ["circum", "prim", "nom", "rect"] },
+            "Week 5": { prompt: "Type the Latin root meaning hand, touch, or fit together:", answers: ["manu", "corp", "tact", "tang", "struct"] },
+            "Week 6": { prompt: "Type the Latin root meaning time, large, or to pull:", answers: ["temp", "magn", "tract"] },
+            "Week 7": { prompt: "Type the Latin root meaning run, make, or hang:", answers: ["curr", "fac", "pend"] },
+            "Week 8": { prompt: "Type the Latin root meaning write, speak, or law:", answers: ["scrip", "scrib", "dict", "leg"] },
+            "Week 9": { prompt: "Type the Latin root meaning group, both, or play:", answers: ["greg", "ambi", "lud", "lus"] },
+            "Week 10": { prompt: "Type ANY Latin root component studied this term in this revision word:", answers: ["aqua", "duc", "ped", "aud", "vis", "voc", "cent", "dec", "un", "oct", "circum", "prim", "nom", "rect", "manu", "corp", "tact", "tang", "struct", "temp", "magn", "tract", "curr", "fac", "pend", "scrip", "scrib", "dict", "leg", "greg", "ambi", "lud", "lus"] }
         }
     };
 
@@ -592,7 +592,7 @@
             const matchedRule = currentRule.answers.find(a => currentTargetWord.toLowerCase().includes(a)) || currentRule.answers[0];
 
             if (currentTaskType === "rule") {
-                isCorrect = currentRule.answers.includes(userGuess) && currentTargetWord.toLowerCase().includes(userGuess);
+                isCorrect = currentRule.answers.some(ans => ans === userGuess) && currentTargetWord.toLowerCase().includes(userGuess);
             } 
             else if (currentTaskType === "position") {
                 let idx = currentTargetWord.toLowerCase().indexOf(matchedRule);
